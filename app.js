@@ -16,12 +16,13 @@ const assignTaskRouter = require('./routes/assignTaskRoute')
 const port = process.env.PORT 
 const app = express()
 
-app.use(cors(
-    {
-    origin: "https://your-frontend-url.vercel.app",
-    credentials: true
-    }
-))
+app.use(cors({
+  origin: [
+    "https://task-management-frontend-jn0zwuet9-aadesh-sonawane-s-projects.vercel.app",
+    "https://task-management-frontend.vercel.app"
+  ],
+  credentials: true
+}));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
