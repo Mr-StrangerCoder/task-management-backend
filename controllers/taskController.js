@@ -80,7 +80,7 @@ async function deleteTask(req, res) {
     try {
 
         const task = await Task.findByPk(req.params.task_ID)
-        if (!task) {
+            if (!task) {
             return res.status(400).send({ msg: "Task not found" })
         } else {
             await task.destroy()

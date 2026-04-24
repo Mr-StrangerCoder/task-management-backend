@@ -8,7 +8,7 @@ function auth(req, res, next){
         if (!token) {
             return res.status(400).send({ msg: "Please Login" })
         }
-
+        
         if (token.startsWith("Bearer")) {
             token = token.split(" ")[1]
 

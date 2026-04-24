@@ -86,9 +86,9 @@ async function updateUser(req,res){
     try{
 
         const ID = req.user.id
-        console.log(ID, "333333333333333333333333333333333")
+        // console.log(ID, "333333333333333333333333333333333")
         const user = await User.findByPk(ID)
-        console.log(user, "111111111111111111111111111111111")
+        // console.log(user, "111111111111111111111111111111111")
         if(!user){
              return res.status(400).send({ msg: "task not found" })
         } else{
