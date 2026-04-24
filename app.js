@@ -18,8 +18,8 @@ const app = express()
 
 app.use(cors({
   origin: [
-    "https://task-management-frontend-jn0zwuet9-aadesh-sonawane-s-projects.vercel.app",
-    "https://task-management-frontend.vercel.app"
+    "https://task-management-frontend-jn0zwuet9-aadesh-sonawane-s-projects.vercel.app"
+    
   ],
   credentials: true
 }));
