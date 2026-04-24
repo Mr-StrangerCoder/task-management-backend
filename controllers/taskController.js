@@ -60,7 +60,7 @@ async function update_my_task(req, res) {
         // console.log(req.params.taskID)
 
         const task_id = req.params.task_ID
-            console.log(task_id)
+        console.log(task_id)
         const task = await Task.findByPk(task_id)
         console.log(task, "7777777777777777")
         if (!task) {
@@ -81,11 +81,11 @@ async function deleteTask(req, res) {
 
         const task = await Task.findByPk(req.params.task_ID)
         if (!task) {
-            res.status(400).send({ msg: "Task not found" })
+            return res.status(400).send({ msg: "Task not found" })
         } else {
             await task.destroy()
+            return res.status(200).send({ success: true })
         }
-        res.status(200).send({ success: true })
     } catch (error) {
         res.status(500).send({ success: false, msg: "Server Error" })
 

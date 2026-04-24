@@ -20,7 +20,7 @@ const assign = async (req,res)=>{
 
 const my_tasks = async (req,res) =>{
     try{
-        const user_id = req.user.ID
+        const user_id = req.user.id
         const tasks = await AssignTask.findAll({
             where:{user_id:user_id},
             

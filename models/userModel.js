@@ -24,10 +24,10 @@ const User = sequelize.define("User",{
         type:DataTypes.ENUM("admin","user"),
         defaultValue:'user'
     },
-     img_path:{
-        type:DataTypes.STRING,
-        allowNull:false
-     }
+    img_path:{
+    type:DataTypes.STRING,
+    allowNull:true   
+}
 },{timestamps:true,tableName:"users"})
 
 module.exports = User

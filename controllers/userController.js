@@ -3,7 +3,7 @@ const jwt = require('jsonwebtoken')
 require('dotenv').config()
 const User = require('../models/userModel')  
 
-const BASE_URL = 'http://localhost:5010/upload/'
+const BASE_URL = `${process.env.BASE_URL}/upload/`
 
 async function register(req, res) {
     const { name, email, password, contactNumber } = req.body
@@ -111,7 +111,7 @@ async function getAllUsers(req, res){
             const allUser = await User.findAll({
                 attributes:['id','name' ]
             })
-            res.status(200).send({success:true, allUser:allUser})
+            res.status(200).send({success:true, allUsers:allUser})
         
     } catch (error) {
         res.status(500).send({ success: false, msg: "Server Error" })
