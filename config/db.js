@@ -14,7 +14,7 @@ const sequelize = new Sequelize(
     dialectOptions: {
       ssl: {
         ca: fs.readFileSync('./ca.pem'), 
-        rejectUnauthorized: true
+        rejectUnauthorized: false
       }
     }
   }

@@ -18,10 +18,12 @@ const app = express()
 
 app.use(cors({
   origin: [
-    "https://task-management-frontend-jn0zwuet9-aadesh-sonawane-s-projects.vercel.app"
-    
+    'https://task-management-frontend-one-nu.vercel.app',  // your frontend URL
+    'http://localhost:5173'  // local dev
   ],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 app.use(express.json())
@@ -37,7 +39,7 @@ app.use('/assignTask', assignTaskRouter)
 
 app.use('/upload', express.static(path.join(__dirname, 'upload')))
 
-app.listen(port,()=>{
-    console.log(`server running on http://localhost:${port}`)
+app.listen(process.env.PORT || 5010, () => {
+  console.log(`Server running on port ${process.env.PORT || 5010}`)
 })
 
